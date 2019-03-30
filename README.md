@@ -43,4 +43,23 @@ task copyAllFiles(type: Copy){
 }
  ~~~
  
+ ###Exclude File during copy task
+ 
+ ~~~
+task excludeFilesDuringCopy(type: Copy){
+    from 'src/main/resources/'
+    into 'src/test/resources/'
+    exclude '**/res*'
+}
+ ~~~
+ 
+ ###Copy Specific File 
+  
+  ~~~
+task copySpecificFiles(type: Copy){
+    from 'src/main/resources/'
+    into 'src/test/resources/'
+    include '**/res*'
+}
+  ~~~
  

@@ -12,6 +12,8 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+
+
 repositories {
     mavenCentral()
 }
@@ -28,14 +30,33 @@ task testRavi{
 }
 
 task copySpecificFile(type: Copy){
-    from 'src/main/resources/res1'
-    into 'src/test/resources/'
+    from 'src/main/resources/txtfiles/res1'
+    into 'src/test/resources/txtfiles/'
 }
 
 task copyAllFiles(type: Copy){
-    from 'src/main/resources/'
-    into 'src/test/resources/'
+    from 'src/main/resources/txtfiles/'
+    into 'src/test/resources/txtfiles/'
 }
+
+task excludeFilesDuringCopy(type: Copy){
+    from 'src/main/resources/txtfiles/'
+    into 'src/test/resources/txtfiles/'
+    exclude '**/res*'
+}
+task copySpecificFiles(type: Copy){
+    from 'src/main/resources/txtfiles/'
+    into 'src/test/resources/txtfiles/'
+    include '**/res*'
+}
+
+//task renameFileDuringCopy(type: copy){
+//    from 'src/main/resources/txtfiles/'
+//    into 'src/main/resources/txtfiles/'
+//    rename{ fileName ->
+//        "test-files${(fileName - 'file-template')}"
+//    }
+//}
 
 test {
     println("project builded successfully")
