@@ -27,6 +27,15 @@ task testRavi{
     }
 }
 
+task copySpecificFile(type: Copy){
+    from 'src/main/resources/res1'
+    into 'src/test/resources/'
+}
+
+task copyAllFiles(type: Copy){
+    from 'src/main/resources/'
+    into 'src/test/resources/'
+}
 
 test {
     println("project builded successfully")

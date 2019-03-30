@@ -19,3 +19,28 @@ Gradle Helper Project
  1) Custom tasks will be under Tasks--> Others --> 'Your task'
  2) You can run test tasks after build by extending test task
  
+ 
+ 
+ #File Operations
+ 
+ ##Copy Task
+ 
+ ###Copy Specific File
+ 
+ ~~~
+task copySpecificFile(type: Copy){
+    from 'src/main/resources/res1'
+    into 'src/test/resources/'
+}
+ ~~~
+ 
+ ###Copy All File
+ 
+ ~~~
+task copyAllFiles(type: Copy){
+    from 'src/main/resources/'
+    into 'src/test/resources/'
+}
+ ~~~
+ 
+ 
