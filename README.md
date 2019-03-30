@@ -4,7 +4,8 @@ Gradle Helper Project
 #Key Files
 1. build.gradle
 2. settings.gradle
-3. Final jar will be collected in **build/libs/<YourProject.jar>**
+3. gradle-wrapper.properties
+4. Final jar will be collected in **build/libs/<YourProject.jar>**
 
 
 #####Execute Tasks
